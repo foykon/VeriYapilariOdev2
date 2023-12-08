@@ -12,6 +12,8 @@ struct Node {
 
 class AVLTree {
 public:
+    int sumOfRoot=0;
+
     Node* root;
 
     AVLTree();
@@ -33,6 +35,8 @@ public:
     void postorderTraversal(Node* root);
 
     void display();
+
+    void yapraklariBulPostorder(Node* node);
 };
 
 #endif // AVL_TREE_HPP

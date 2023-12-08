@@ -101,3 +101,19 @@ void AVLTree::display() {
     postorderTraversal(root);
     std::cout << std::endl;
 }
+
+
+void AVLTree::yapraklariBulPostorder(Node* node) {
+    if (node == nullptr) {
+        return;
+    }
+
+    yapraklariBulPostorder(node->left);
+    yapraklariBulPostorder(node->right);
+
+    if (node->left == nullptr && node->right == nullptr) {
+        std::cout << node->key << " ";  // veya başka bir işlem yapabilirsiniz
+    }else{
+        sumOfRoot += node->key;
+    }
+}

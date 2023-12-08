@@ -45,11 +45,17 @@ void FileReader::DosyadanOkuVeYazdir() {
         // Satırın sonunda uyarı ver
         std::cout << "\nSatir bitti!\n";
     }
+    
     //avlliste elemanlarını dönmek için
     for (const auto& element : AVLTreeList) {
+        std::cout<<std::endl<<"display"<<std::endl;
         element->display();
+        std::cout<<std::endl<<"yapraklar"<<std::endl;
+        element->yapraklariBulPostorder(element->root);
+        std::cout<< "toplam :" <<element->sumOfRoot<<","<<element->sumOfRoot%(90-65 + 1) + 65;
     }
     std::cout << std::endl;
+
 
     dosya.close();
 }
