@@ -1,33 +1,40 @@
-#include "stack.hpp"
-#include <iostream>
+#include "Stack.hpp"
 
-Stack::Stack() : top(-1) {}
+Stack::Stack() : top(nullptr) {}
 
-void Stack::push(int value) {
-    if (top < MAX_SIZE - 1) {
-        elements[++top] = value;
-        std::cout << value << " yigita eklendi." << std::endl;
-    } else {
-        std::cout << "Yigit dolu, eleman eklenemedi." << std::endl;
+Stack::~Stack() {
+    // Yığın boşaltılırken bellek sızıntısını önlemek için düğümleri sil
+    while (!isEmpty()) {
+        pop();
     }
 }
 
+void Stack::push(int value) {
+    Node* newNode = new Node(value);
+    newNode->next = top;
+    top = newNode;
+    std::cout << value << " yigita eklendi." << std::endl;
+}
+
 void Stack::pop() {
-    if (top >= 0) {
-        std::cout << elements[top--] << " yigittan cikarildi." << std::endl;
+    if (!isEmpty()) {
+        Node* temp = top;
+        top = top->next;
+        std::cout << temp->data << " yigittan cikarildi." << std::endl;
+        delete temp;
     } else {
         std::cout << "Yigit bos, eleman cikarilamadi." << std::endl;
     }
 }
 
 void Stack::peek() {
-    if (top >= 0) {
-        std::cout << "Yigitin ustundeki eleman: " << elements[top] << std::endl;
+    if (!isEmpty()) {
+        std::cout << "Yigitin ustundeki eleman: " << top->data << std::endl;
     } else {
         std::cout << "Yigit bos, eleman goruntulenemiyor." << std::endl;
     }
 }
 
 bool Stack::isEmpty() {
-    return (top == -1);
+    return (top == nullptr);
 }
