@@ -7,8 +7,10 @@
 * @author Furkan YILDIZ furkan.yildiz12@ogr.sakarya.edu.tr
 */
 #include "FileReader.hpp"
+#include "AVLTree.hpp"
 #include <iostream>
-
+#include <list>
+using namespace std;
 int main() {
 
 
@@ -27,10 +29,18 @@ int main() {
     // Dosyadan oku ve ekrana yazdır
     fileReader.DosyadanOkuVeYazdir();
 
+    //işlem yapabilmek için listeyi main kısmına çektik
+    list<AVLTree *> AVLTreeList = fileReader.AVLTreeList;
+
     // Dosyayı kapat
     fileReader.DosyayiKapat();
 
+    cout<<"--------";
+    for (const auto& element : AVLTreeList) {
+        
 
-    
+        
+    }
+
     return 0;
 }

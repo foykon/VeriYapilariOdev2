@@ -4,7 +4,7 @@
 #include "AVLTree.hpp"
 #include <string>
 #include <fstream>
-#include <vector>
+#include <list>
 
 class FileReader {
 public:
@@ -12,9 +12,10 @@ public:
     bool DosyayiAc();
     void DosyadanOkuVeYazdir();
     void DosyayiKapat();
+    std::list<AVLTree *> AVLTreeList;
 
 private:
-    std::vector<AVLTree *> AVLTreeList;
+    
     std::string dosyaAdi;
     std::ifstream dosya;
 };
