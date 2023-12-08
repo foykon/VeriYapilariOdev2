@@ -7,6 +7,18 @@ AVLTree::AVLTree() : root(nullptr) {
     stack=s;
 }
 
+AVLTree::~AVLTree() {
+    destroyTree(root);
+}
+
+void AVLTree::destroyTree(Node* root) {
+    if (root != nullptr) {
+        destroyTree(root->left);
+        destroyTree(root->right);
+        delete root;
+    }
+}
+
 int AVLTree::height(Node* node) {
     if (node == nullptr)
         return 0;
@@ -97,7 +109,7 @@ void AVLTree::postorderTraversal(Node* root) {
     if (root != nullptr) {
         postorderTraversal(root->left);
         postorderTraversal(root->right);
-        std::cout << root->key << " ";
+        //std::cout << root->key << " ";
     }
 }
 

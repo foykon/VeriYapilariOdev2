@@ -35,12 +35,59 @@ int main() {
     // Dosyayı kapat
     fileReader.DosyayiKapat();
 
-    cout<<"--------";
-    for (const auto& element : AVLTreeList) {
+
+
+
+    AVLTree* temp = AVLTreeList.front();
+
+    
+    
+    while(AVLTreeList.size()!=1){
+    
+        //en küçüğü bulma
+        for (const auto& element : AVLTreeList) {
+        if(element->stack->isEmpty()) continue;    
+            if(element->stack->peek() < temp->stack->peek()){
+
+                temp = element;
+            }
+
+        }
+        temp->stack->pop();
+        temp = AVLTreeList.front();
         
+        //en büyüğü bulma
+        for (const auto& element : AVLTreeList) {
+                    if(element->stack->isEmpty()) continue;    
+
+            if(element->stack->peek() > temp->stack->peek()){
+                temp = element;
+            }
+
+        }
+        temp->stack->pop();
+        temp = AVLTreeList.front();
 
         
+
+        //yığını boşalan varsa silme işlemi ve ekrana harfleri yazdırma
+        for (const auto& element : AVLTreeList) {
+            if(element->stack->isEmpty()){
+                AVLTreeList.remove(element);
+                cout<< "sayisi" << AVLTreeList.size() << endl;
+                element->stack->~Stack();
+                element->~AVLTree();
+                
+            }
+            //else
+            //cout<<element->sumOfRoot%(90-65 + 1) + 65;
+        }
+
+    
     }
+
+    cout<<AVLTreeList.front()->siraNo<<" - "<<AVLTreeList.front()->sumOfRoot%(90-65 + 1) + 65;
+
 
     return 0;
 }

@@ -23,15 +23,17 @@ void Stack::pop() {
         std::cout << temp->data << " yigittan cikarildi." << std::endl;
         delete temp;
     } else {
-        std::cout << "Yigit bos, eleman cikarilamadi." << std::endl;
+      //  std::cout << "Yigit bos, eleman cikarilamadi." << std::endl;
     }
 }
 
-void Stack::peek() {
+int Stack::peek() {
     if (!isEmpty()) {
-        std::cout << "Yigitin ustundeki eleman: " << top->data << std::endl;
+        //std::cout << "Yigitin ustundeki eleman: " << top->data << std::endl;
+        return top->data;
     } else {
-        std::cout << "Yigit bos, eleman goruntulenemiyor." << std::endl;
+    //    std::cout << "Yigit bos, eleman goruntulenemiyor." << std::endl;
+        return 0;
     }
 }
 

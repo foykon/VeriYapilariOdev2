@@ -15,7 +15,7 @@ public:
     std::list<AVLTree *> AVLTreeList;
 
 private:
-    
+    int siraNo=1;
     std::string dosyaAdi;
     std::ifstream dosya;
 };

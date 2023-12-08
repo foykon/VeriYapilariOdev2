@@ -20,7 +20,7 @@ public:
 
     void push(int value);
     void pop();
-    void peek();
+    int peek();
     bool isEmpty();
 };
 

@@ -32,6 +32,8 @@ void FileReader::DosyadanOkuVeYazdir() {
         int sayi;
         //yeni avl ağacı üretimi
         AVLTree* avlTree = new AVLTree();
+        avlTree->siraNo = siraNo; 
+        siraNo++;
         // Satırdaki her bir sayıyı ayır ve işle
         while (iss >> sayi) {
             // avl ağacına ekleme
@@ -47,11 +49,11 @@ void FileReader::DosyadanOkuVeYazdir() {
     
     //avlliste elemanlarını dönmek için
     for (const auto& element : AVLTreeList) {
-        std::cout<<std::endl<<"display"<<std::endl;
+        //std::cout<<std::endl<<"display"<<std::endl;
         element->display();
-        std::cout<<std::endl<<"yapraklar"<<std::endl;
+        //std::cout<<std::endl<<"yapraklar"<<std::endl;
         element->yapraklariBulPostorder(element->root);
-        std::cout<< "toplam :" <<element->sumOfRoot<<","<<element->sumOfRoot%(90-65 + 1) + 65;
+        //std::cout<< "toplam :" <<element->sumOfRoot<<","<<element->sumOfRoot%(90-65 + 1) + 65;
     }
     std::cout << std::endl;
 

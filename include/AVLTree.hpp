@@ -13,13 +13,19 @@ struct Node {
 
 class AVLTree {
 public:
+    int siraNo;
+
     int sumOfRoot=0;
 
     Node* root;
 
+    Stack* stack;
+
     AVLTree();
 
-    Stack* stack;
+    ~AVLTree(); // Yıkıcı fonksiyon
+
+    void destroyTree(Node* root);// yıkıcı yardım
 
     int height(Node* node);
 
