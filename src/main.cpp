@@ -10,17 +10,27 @@
 #include <iostream>
 
 int main() {
-    // Dosya adını belirleyin
-    std::string filename = "Veri.txt";
 
-    // FileReader sınıfını kullanarak dosyadan veri okuma
-    FileReader fileReader(filename);
 
-    // Tüm satırları oku ve ekrana yazdır
-    std::vector<std::string> lines = fileReader.ReadAllLines();
-    for (const auto& line : lines) {
-        std::cout << line << std::endl;
+    // Dosya adını ve yolunu belirtin
+    std::string dosyaAdi = "Veri.txt";
+    
+    // FileReader sınıfından bir nesne oluşturun
+    FileReader fileReader(dosyaAdi);
+
+    // Dosyayı aç
+    if (!fileReader.DosyayiAc()) {
+        std::cerr << "Dosya acilamadi: " << dosyaAdi << std::endl;
+        return 1;
     }
 
+    // Dosyadan oku ve ekrana yazdır
+    fileReader.DosyadanOkuVeYazdir();
+
+    // Dosyayı kapat
+    fileReader.DosyayiKapat();
+
+
+    
     return 0;
 }
