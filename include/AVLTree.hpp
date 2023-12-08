@@ -1,5 +1,6 @@
 #ifndef AVL_TREE_HPP
 #define AVL_TREE_HPP
+#include "Stack.hpp"
 
 struct Node {
     int key;
@@ -17,6 +18,8 @@ public:
     Node* root;
 
     AVLTree();
+
+    Stack* stack;
 
     int height(Node* node);
 

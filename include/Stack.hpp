@@ -3,16 +3,16 @@
 
 #include <iostream>
 
-struct Node {
+struct SNode {
     int data;
-    Node* next;
+    SNode* next;
 
-    Node(int value) : data(value), next(nullptr) {}
+    SNode(int value) : data(value), next(nullptr) {}
 };
 
 class Stack {
 private:
-    Node* top;
+    SNode* top;
 
 public:
     Stack();

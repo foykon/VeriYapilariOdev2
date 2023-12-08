@@ -10,7 +10,7 @@ Stack::~Stack() {
 }
 
 void Stack::push(int value) {
-    Node* newNode = new Node(value);
+    SNode* newNode = new SNode(value);
     newNode->next = top;
     top = newNode;
     std::cout << value << " yigita eklendi." << std::endl;
@@ -18,7 +18,7 @@ void Stack::push(int value) {
 
 void Stack::pop() {
     if (!isEmpty()) {
-        Node* temp = top;
+        SNode* temp = top;
         top = top->next;
         std::cout << temp->data << " yigittan cikarildi." << std::endl;
         delete temp;

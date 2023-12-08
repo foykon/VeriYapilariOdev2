@@ -1,7 +1,11 @@
 #include "AVLTree.hpp"
 #include <iostream>
+#include "Stack.hpp"
 
-AVLTree::AVLTree() : root(nullptr) {}
+AVLTree::AVLTree() : root(nullptr) {
+    Stack* s = new Stack();
+    stack=s;
+}
 
 int AVLTree::height(Node* node) {
     if (node == nullptr)
@@ -112,7 +116,7 @@ void AVLTree::yapraklariBulPostorder(Node* node) {
     yapraklariBulPostorder(node->right);
 
     if (node->left == nullptr && node->right == nullptr) {
-        std::cout << node->key << " ";  // veya başka bir işlem yapabilirsiniz
+        stack->push(node->key);
     }else{
         sumOfRoot += node->key;
     }
