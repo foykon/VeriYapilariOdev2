@@ -1,3 +1,12 @@
+/**
+* @file Stack.hpp
+* @description avl ağacının yapraklarını saklmak için kullandığımız yığıt sınıfınin arayüzü
+* @course Dersi 1. öğretin a grubu
+* @assignment 2. ödev
+* @date 8.12.2023
+* @author Furkan YILDIZ furkan.yildiz12@ogr.sakarya.edu.tr
+*/
+
 #ifndef Stack_HPP
 #define Stack_HPP
 

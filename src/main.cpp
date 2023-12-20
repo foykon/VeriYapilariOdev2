@@ -40,53 +40,66 @@ int main() {
 
     AVLTree* temp = AVLTreeList.front();
 
-    
+    bool flag = false;
     
     while(AVLTreeList.size()!=1){
     
+        flag =false;
         //en küçüğü bulma
         for (const auto& element : AVLTreeList) {
-        if(element->stack->isEmpty()) continue;    
+            if(element->stack->isEmpty()){
+                flag=true;
+                system("cls");
+                for (const auto& element : AVLTreeList) {
+                    cout<<static_cast<char>(element->sumOfRoot%(90-65 + 1) + 65);
+                }
+                AVLTreeList.remove(element);
+                //cout<< "sayisi" << AVLTreeList.size() << endl;
+                element->stack->~Stack();
+                element->~AVLTree();
+                
+                
+            }
             if(element->stack->peek() < temp->stack->peek()){
 
                 temp = element;
             }
-
         }
+        if(flag) continue;
         temp->stack->pop();
         temp = AVLTreeList.front();
         
         //en büyüğü bulma
         for (const auto& element : AVLTreeList) {
-                    if(element->stack->isEmpty()) continue;    
+            if(element->stack->isEmpty()){
+                flag=true;
+                system("cls");
+                for (const auto& element : AVLTreeList) {
+                    cout<<static_cast<char>(element->sumOfRoot%(90-65 + 1) + 65);
+                }
+                AVLTreeList.remove(element);
+                //cout<< "sayisi" << AVLTreeList.size() << endl;
+                element->stack->~Stack();
+                element->~AVLTree();
 
+            }    
             if(element->stack->peek() > temp->stack->peek()){
                 temp = element;
             }
-
         }
+        if(flag) continue;
         temp->stack->pop();
         temp = AVLTreeList.front();
 
-        
-
-        //yığını boşalan varsa silme işlemi ve ekrana harfleri yazdırma
-        for (const auto& element : AVLTreeList) {
-            if(element->stack->isEmpty()){
-                AVLTreeList.remove(element);
-                cout<< "sayisi" << AVLTreeList.size() << endl;
-                element->stack->~Stack();
-                element->~AVLTree();
                 
-            }
-            //else
-            //cout<<element->sumOfRoot%(90-65 + 1) + 65;
-        }
-
+            
+            // yığını boşalan varsa silme işlemi ve ekrana harfleri yazdırma
+        
+        
     
     }
-
-    cout<<AVLTreeList.front()->siraNo<<" - "<<AVLTreeList.front()->sumOfRoot%(90-65 + 1) + 65;
+    cout<<"SON KARAKTER  : "<<static_cast<char>(AVLTreeList.front()->sumOfRoot%(90-65 + 1) + 65)<<endl;
+    cout<<"SIRA NUMARASI : "<<AVLTreeList.front()->siraNo<<endl;
 
 
     return 0;

@@ -1,3 +1,12 @@
+/**
+* @file AVLTree.cpp
+* @description avlağacının çalışma mantığına göre ve program için özel fonksiyonlar
+* @course Dersi 1. öğretin a grubu
+* @assignment 2. ödev
+* @date 8.12.2023
+* @author Furkan YILDIZ furkan.yildiz12@ogr.sakarya.edu.tr
+*/
+
 #include "AVLTree.hpp"
 #include <iostream>
 #include "Stack.hpp"
@@ -115,7 +124,7 @@ void AVLTree::postorderTraversal(Node* root) {
 
 void AVLTree::display() {
     postorderTraversal(root);
-    std::cout << std::endl;
+
 }
 
 

@@ -1,3 +1,13 @@
+/**
+* @file FileReader.hpp
+* @description dosya okuma işlemini yaptığımız ve avl ağaçlarının oluştuğu sınıfın arayüzü
+* @course Dersi 1. öğretin a grubu
+* @assignment 2. ödev
+* @date 8.12.2023
+* @author Furkan YILDIZ furkan.yildiz12@ogr.sakarya.edu.tr
+*/
+
+
 #ifndef FileReader_HPP
 #define FileReader_HPP
 

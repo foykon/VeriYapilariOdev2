@@ -1,3 +1,12 @@
+/**
+* @file AVLTree.hpp
+* @description avlağacının çalışma mantığına göre ve program için özel fonksiyonların bullunduğu sınıfın arayüzü
+* @course Dersi 1. öğretin a grubu
+* @assignment 2. ödev
+* @date 8.12.2023
+* @author Furkan YILDIZ furkan.yildiz12@ogr.sakarya.edu.tr
+*/
+
 #ifndef AVL_TREE_HPP
 #define AVL_TREE_HPP
 #include "Stack.hpp"

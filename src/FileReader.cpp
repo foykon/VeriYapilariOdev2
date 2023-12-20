@@ -1,3 +1,12 @@
+/**
+* @file FileReader.cpp
+* @description dosya okuma işlemini yaptığımız ve avl ağaçlarının oluştuğu sınıf
+* @course Dersi 1. öğretin a grubu
+* @assignment 2. ödev
+* @date 8.12.2023
+* @author Furkan YILDIZ furkan.yildiz12@ogr.sakarya.edu.tr
+*/
+
 #include "FileReader.hpp"
 #include "AVLTree.hpp"
 #include <iostream>
@@ -44,7 +53,7 @@ void FileReader::DosyadanOkuVeYazdir() {
         avlTree->display();
 
         // Satırın sonunda uyarı ver
-        std::cout << "\nSatir bitti!\n";
+        //std::cout << "\nSatir bitti!\n";
     }
     
     //avlliste elemanlarını dönmek için
