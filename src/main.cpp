@@ -40,11 +40,23 @@ int main() {
 
     AVLTree* temp = AVLTreeList.front();
 
+    //silinen nesne var mı kontrol bayrağı
     bool flag = false;
     
+    //avl listesi bitene kadar döngü
     while(AVLTreeList.size()!=1){
-    
-        flag =false;
+        //yığıtların içini boşlatmak ve tekara doldurmak için if bloğu
+        if(flag){
+            for (const auto& element : AVLTreeList) {
+                    element->stack->bosalt();
+                    element->sumOfRoot=0;
+                    element->yapraklariBulPostorder(element->root);
+                    
+                }
+        
+            flag =false;
+        }
+        
         //en küçüğü bulma
         for (const auto& element : AVLTreeList) {
             if(element->stack->isEmpty()){
@@ -52,6 +64,7 @@ int main() {
                 system("cls");
                 for (const auto& element : AVLTreeList) {
                     cout<<static_cast<char>(element->sumOfRoot%(90-65 + 1) + 65);
+                    
                 }
                 AVLTreeList.remove(element);
                 //cout<< "sayisi" << AVLTreeList.size() << endl;

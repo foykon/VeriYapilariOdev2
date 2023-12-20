@@ -18,6 +18,18 @@ Stack::~Stack() {
     }
 }
 
+void Stack::bosalt(){
+    SNode* temp = top;
+    while(!isEmpty()){
+         
+        
+        top = top->next;
+        //std::cout << temp->data << " yigittan cikarildi." << std::endl;
+        delete temp;
+    
+    }
+}
+
 void Stack::push(int value) {
     SNode* newNode = new SNode(value);
     newNode->next = top;

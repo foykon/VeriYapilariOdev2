@@ -28,6 +28,7 @@ public:
     ~Stack();
 
     void push(int value);
+    void bosalt();
     void pop();
     int peek();
     bool isEmpty();
